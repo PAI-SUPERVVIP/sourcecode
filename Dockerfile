@@ -1,14 +1,5 @@
-FROM node:20-alpine
+FROM ghcr.io/bon5co/opencode-webui-workspace:latest
 
-RUN apk add --no-cache python3 make g++ bash
+EXPOSE 4096
 
-WORKDIR /app
-
-COPY package*.json ./
-RUN npm install
-
-COPY . .
-
-EXPOSE 3000
-
-CMD ["node", "server.js"]
+CMD ["/entrypoint.sh"]
