@@ -9,9 +9,6 @@ RUN apt-get update && apt-get install -y \
 
 RUN npm install -g opencode-ai
 
-ENV OPENCODE_SERVER_PASSWORD=vipvip
-ENV OPENCODE_SERVER_USERNAME=sloth
-
 WORKDIR /workspace
 
 EXPOSE 4096
