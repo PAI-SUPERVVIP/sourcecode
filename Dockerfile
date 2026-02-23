@@ -1,8 +1,19 @@
-FROM ghcr.io/bon5co/opencode-webui-workspace:latest
+FROM node:20-slim
 
-RUN chmod +x /root/.opencode/bin/opencode 2>/dev/null || true
-RUN chmod +x /entrypoint.sh 2>/dev/null || true
+RUN apt-get update && apt-get install -y \
+    curl \
+    git \
+    python3 \
+    sudo \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN npm install -g opencode-ai
+
+ENV OPENCODE_SERVER_PASSWORD=vipvip
+ENV OPENCODE_SERVER_USERNAME=sloth
+
+WORKDIR /workspace
 
 EXPOSE 4096
 
-CMD ["/entrypoint.sh"]
+CMD ["sh", "-c", "opencode web --hostname 0.0.0.0 --port ${PORT:-4096}"]
