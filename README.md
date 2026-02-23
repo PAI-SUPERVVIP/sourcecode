@@ -7,11 +7,11 @@ Deploy OpenCode WebUI on Railway with password protection.
 1. Go to Railway → New Project → Deploy from GitHub repo
 2. Select this repo `PAI-SUPERVVIP/sourcecode`
 3. Add Environment Variables:
-   - `OPENCODE_SERVER_USERNAME` = `sloth`
-   - `OPENCODE_SERVER_PASSWORD` = `vipvip`
+   - `OPENCODE_SERVER_USERNAME` = `youuser`
+   - `OPENCODE_SERVER_PASSWORD` = `youpasswd`
 4. Deploy!
 
 ## Login
 
-- Username: `sloth`
-- Password: `vipvip`
+- Username: `youuser`
+- Password: `youpasswd`
